@@ -1,0 +1,106 @@
+ <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobs</title>
+    <!-- Bootstrap Styles-->
+    <link href="/static/admin/assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="/static/admin/assets/css/font-awesome.css" rel="stylesheet" />
+     <!-- Morris Chart Styles-->
+   
+        <!-- Custom Styles-->
+    <link href="/static/admin/assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+     <!-- TABLE STYLES-->
+    <link href="/static/admin/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+                        <div class="panel-heading">
+                        <h1 align="center">Jobs </h1></br></br>        
+                                        </div>
+                        
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+
+                                            <th>Company</th>
+                                            <th>Designation</th>
+                                            <th>Salary</th>
+                                            <th>Qualification</th>
+
+                                            <th>Place</th>
+                                            <th>District</th>
+                                            <th>Date</th>
+                                            <!-- <th>user_confirmation</th> -->
+                                            <!-- <th>company</th> -->
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>{% for i in msg %}
+                                        <tr class="success">
+                                            <td>{{i.id}}</td>
+                                            <td>{{i.cmpny}}</td>
+                                            <td>{{i.designatn}}</td>
+                                            <td>{{i.salary}}</td>
+                                            <td>{{i.qualification}}</td>
+                                            <td>{{i.place}}</td>
+                                            <td>{{i.district}}</td>
+                                            <td>{{i.dte}}</td>
+                                            <!-- <td>{{i.usr_status}}</td> -->
+                                            <td>
+                                            <form method="POST" action="dlte_admn_jobs">{% csrf_token %}
+                                                
+
+                                                <button class="btn btn-danger" name="id" value="{{i.id}}">Delete</button></br>
+                                                <!-- <button class="btn btn-danger" name="id" value="{{i.id}}">Declined</button></br>
+ -->
+                                            </form>
+                                        </td>
+                                        </tr>
+                                        {% endfor %}
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  end  Context Classes  -->
+                </div>
+            </div>
+                <!-- /. ROW  -->
+        </div>
+               <!-- <footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez</a></p></footer> -->
+    </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+            <a href="http://127.0.0.1:8000/bck_home_admin">Back Home</a>
+
+         <!-- /. PAGE WRAPPER  -->
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="/static/admin/assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="/static/admin/assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="/static/admin/assets/js/jquery.metisMenu.js"></script>
+     <!-- DATA TABLE SCRIPTS -->
+    <script src="/static/admin/assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="/static/admin/assets/js/dataTables/dataTables.bootstrap.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+         <!-- Custom Js -->
+    <script src="/static/admin/assets/js/custom-scripts.js"></script>
+    
+   
+</body>
+</html>

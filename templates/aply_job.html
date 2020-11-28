@@ -1,0 +1,107 @@
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Apply for Job</title>
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Main CSS-->
+    <link href="static/aply_job/css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-green p-t-100 p-b-50" style="background-image: url('static/images/img_bg_2.jpg');">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-6">
+                <div class="card-heading">
+                    <h2 class="title">Apply for job</h2>
+                </div>
+                <div class="card-body">
+      <div style="color: red" align="center"></div>
+                    <form method="POST" action="apply_jobs_user" enctype="multipart/form-data">
+                        {% for i in msg %}
+                        {% csrf_token %} 
+                        <div class="form-row">
+                            <div class="name">Full name</div>
+                            <div class="value"><!-- <h4 align="center">{{msg1}}</h4> -->  
+                              <h4><div style="color: red" align="center">{{msge}}</div></h4>
+
+                                <input class="input--style-6" type="text" name="full_name" value="{{i.fname}} {{i.lname}}">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Email address</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="email" name="email" value="{{i.emai}}">
+                                
+                                
+                                </div>
+
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% for j in msg1 %}
+
+                        <input type="hidden" name="cmpany" value="{{j.cmpny}}">
+                        <input type="hidden" name="adres" value="{{j.adres}}">
+                        <input type="hidden" name="designtion" value="{{j.designatn}}">
+                        <input type="hidden" name="daye" value="{{j.date}}">
+{% endfor %}
+
+                        <div class="form-row">
+                            <div class="name">Message</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <textarea class="textarea--style-6" name="message" placeholder="Message sent to the employer"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Upload CV</div>
+                            <div class="value">
+                                <div class="input-group js-input-file">
+                                    <input class="input-file" type="file" name="file_cv" id="file" required="">
+                                    <label class="label--file" for="file">Choose file</label>
+                                    <span class="input-file__info">No file chosen</span>
+                                </div>
+                                <div class="label--desc">Upload your CV/Resume or any other relevant pdf file. Max file size 50 MB</div>
+                            </div>
+                        </div>
+                         <div class="card-footer">
+                    <!-- <button class="btn btn--radius-2 btn--blue-2" type="submit">Send Application</button> -->
+                    <input type="submit" name="" value="Send Application" class="btn btn--radius-2 btn--blue-2">
+                <a href="http://127.0.0.1:8000/user_homeurl">Back Home</a>
+
+                </div>
+                    </form>
+                </div>
+                <!-- <a href="http://127.0.0.1:8000/user_homeurl">Back Home</a> -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="static/aply_job/vendor/jquery/jquery.min.js"></script>
+
+
+    <!-- Main JS-->
+    <script src="static/aply_job/js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

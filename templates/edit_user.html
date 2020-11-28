@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>edit profile</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/static/registration/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="/static/registration/vendor/nouislider/nouislider.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/registration/css/style.css">
+</head>
+<body>
+<!-- <a href="templates/header.html"></a> -->
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="/static/registration/images/form-img.jpg" alt="">
+                    <div class="signup-img-content">
+                        <h2>Profile Updation </h2>
+                        <p>while seats are available !</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="register-form" action="edit">{% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group">
+                                {% for i in msg %}
+                                <!-- {{i}} -->
+                                <div class="form-input">
+                                    <label for="first_name" class="required">First name</label>
+                                    <input type="text" name="fname" id="first_name" / value="{{i.fname}}">
+                                </div>
+                                <div class="form-input">
+                                    <label for="last_name" class="required">Last name</label>
+                                    <input type="text" name="lname" id="last_name" / value="{{i.lname}}">
+                                </div>
+                                 <label for="first_name" class="required">Gender</label>
+                                 <div>
+                                <div class="form-radio-group">
+                                                
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="gender" id="cash" checked>
+                                            <label for="cash">M</label>
+                                            <span class="check"></span>
+                                        </div>
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="gender" id="cheque">
+                                            <label for="cheque">F</label>
+                                            <span class="check"></span>
+                                        </div>
+                                        <!-- <div class="form-radio-item">
+                                            <input type="radio" name="payment" id="demand">
+                                            <label for="demand">Demand Draf</label>
+                                            <span class="check"></span>
+                                        </div> -->
+                                </div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="company" class="required">Place</label>
+                                    <input type="text" name="place" id="company" / value="{{i.place}}">
+                                </div>
+                                <!-- <div class="form-input">
+                                    <label for="email" class="required">Email</label>
+                                    <input type="text" name="email" id="email" />
+                                </div> -->
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Phone number</label>
+                                    <input type="text" name="phnumber" id="phone_number" / value="{{i.phno}}">
+                                </div>
+                                <div class="form-input">
+                                    <label for="email" class="required">Email</label>
+                                    <input type="text" name="email" id="email" / value="{{i.emai}}">
+                                </div>
+                                <div class="form-input"><br>
+                                    <label for="phone_number" class="required">Password</label>
+                                    <input type="text" name="pswd" id="phone_number" / value="{{i.paswrd}}">
+                                </div>
+                                    <!-- <label for="phone_number" class="required">Experiance</label> -->
+
+                                 <!-- <div class="form-radio-group">
+                                                
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="exp"  checked>
+                                            <label for="cash">Y</label>
+                                            <span class="check"></span>
+                                        </div>
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="exp" >
+                                            <label for="cheque">N</label>
+                                            <span class="check"></span>
+                                        </div>
+                                </div> -->
+                            </div>
+                            <div class="form-group">
+                                <div class="form-select">
+                                    <div class="label-flex">
+                                        <label for="meal_preference">Course</label>
+                                        <!-- <a href="#" class="form-link">Lunch detail</a> -->
+                                    </div>
+                                    <div class="select-list">
+                                        <select name="cse" id="meal_preference">
+                                            <option value="BCom">BCom</option>
+                                            <option value="BCA">BCA</option>
+                                            <option value="BTech">BTech</option>
+                                            <option value="BSc">BSc</option>
+                                            <option value="Mcom">Mcom</option>
+                                            <option value="MTech">MTech</option>
+                                            <option value="MSc">MSc</option>
+                                            <option value="MCA">MCA</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="form-radio"> -->
+                                    <div class="form-input">
+                                    <label for="phone_number" class="required">Qualification</label>
+                                    <input type="text" name="qulificn" id="phone_number" / value="{{i.qulifcn}}">
+                                </div>
+                                    <!-- <div class="form-radio-group">             -->
+                                        <!-- <div class="form-radio-item">
+                                            <input type="radio" name="payment" id="cash" checked>
+                                            <label for="cash">Cash</label>
+                                            <span class="check"></span>
+                                        </div> -->
+                                        <!-- <div class="form-radio-item">
+                                            <input type="radio" name="payment" id="cheque">
+                                            <label for="cheque">Cheque</label>
+                                            <span class="check"></span>
+                                        </div> -->
+                                        <!-- <div class="form-radio-item">
+                                            <input type="radio" name="payment" id="demand">
+                                            <label for="demand">Demand Draf</label>
+                                            <span class="check"></span>
+                                        </div> -->
+                                        <div class="form-input">
+                                    <label for="first_name" class="required">Passout</label>
+                                    <input type="text" name="pasout" id="payable" / value="{{i.pasout}}">
+                                <!-- </div> -->
+                                    </div>
+                                <!-- </div> -->
+                                <div class="form-input">
+                                    <label for="chequeno" class="required">Institution</label>
+                                    <input type="text" name="institun" id="chequeno" / value="{{i.clge}}">
+                                </div>
+                                <div class="form-input">
+                                    <label for="blank_name" class="required">Mark</label>
+                                    <input type="text" name="mark" id="blank_name" / value="{{i.mark}}">
+                                </div>
+                                <div class="form-input">
+                                    <label for="payable">Intrested Area</label>
+                                    <input type="text" name="intrst_area" id="payable" / value="{{i.intrested_area}}">
+                                </div>
+                                <label for="phone_number" class="required">Experiance</label>
+
+                                 <div class="form-radio-group">
+                                                
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="exp"  checked>
+                                            <label>Y</label>
+                                            <span class="check"></span>
+                                        </div>
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="exp" >
+                                            <label >N</label>
+                                            <span class="check"></span>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="donate-us">
+                            <label>Donate us</label>
+                            <div class="price_slider ui-slider ui-slider-horizontal">
+                                <div id="slider-margin"></div>
+                                <span class="donate-value" id="value-lower"></span>
+                            </div>
+                        </div> -->
+                        <!-- {% endfor %} -->
+
+                        <div class="form-submit">
+                            <input type="submit" value="Edit" class="submit" id="submit" name="submit" />
+                            <!-- <input type="submit" value="Reset" class="submit" id="reset" name="reset" /> -->
+                        </div>
+                    </form>          
+                      </div>
+
+                </div>
+                    <a href="http://127.0.0.1:8000/user_homeurl">Back Home
+
+
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="/static/registration/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/registration/vendor/nouislider/nouislider.min.js"></script>
+    <script src="/static/registration/vendor/wnumb/wNumb.js"></script>
+    <script src="/static/registration/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/static/registration/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="/static/registration/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

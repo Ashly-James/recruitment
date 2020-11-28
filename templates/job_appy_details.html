@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin job allocation</title>
+	<!-- Bootstrap Styles-->
+    <link href="/static/admin/assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="/static/admin/assets/css/font-awesome.css" rel="stylesheet" />
+     <!-- Morris Chart Styles-->
+   
+        <!-- Custom Styles-->
+    <link href="/static/admin/assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+     <!-- TABLE STYLES-->
+    <link href="/static/admin/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    {% extends "header_admin.html" %}
+    {% block content %}
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+			 <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                           Job Allocation <small></small>
+                        </h1>
+                    </div>
+                </div> 
+                 <!-- /. ROW  -->
+               
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>First Name</th>
+                                            <th>Mail</th>
+                                            <th>Message(s)</th>
+                                            <th>Resume</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for i in msg %}
+                                        
+                                        <tr class="odd gradeX">
+                                            <td>{{i.id}}</td>
+                                            <td>{{i.fullnme}}</td>
+                                            <td>{{i.mail}}</td>
+                                            <td>{{i.msg}}</td>
+                                            <td>{{i.resme_uplod}}</td>
+                                           
+                                          
+                                <td class="center"> <form method="POST" action="admin_job_alot">{% csrf_token %}
+ <button class="btn btn-success" name="id" value="{{i.id}}">Allocate</button>
+ <button type="submit" class="btn btn-danger"  name="id2" value="{{i.id}}">Reject</button>
+  <!-- <button type="submit" class="btn btn-danger"  name="id1" value="{{i.resme_uplod}}">Resume</button> -->
+
+                                        </div>
+    </form>
+ <!-- <form method="POST" action="resume_pdf_view">{% csrf_token %}
+ <button class="btn btn-primary" name="id1" value="{{i.resme_uplod}}"> -->
+ </td>                                        
+                                            <!-- </form> -->
+                                        </td>
+                                           
+                                        </tr>
+                                        {% endfor %}
+                                                                           </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+
+<a href="http://127.0.0.1:8000/bck_home_admin">Back Home</a>
+
+              
+        </div>
+               <!-- <footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez</a></p></footer> -->
+    </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+                    {% endblock %}
+
+         <!-- /. PAGE WRAPPER  -->
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="/static/admin/assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="/static/admin/assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="/static/admin/assets/js/jquery.metisMenu.js"></script>
+     <!-- DATA TABLE SCRIPTS -->
+    <script src="/static/admin/assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="/static/admin/assets/js/dataTables/dataTables.bootstrap.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+         <!-- Custom Js -->
+    <script src="/static/admin/assets/js/custom-scripts.js"></script>
+    
+   
+</body>
+</html>

@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Approved user</title>
+	<!-- Bootstrap Styles-->
+    <link href="/static/admin/assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="/static/admin/assets/css/font-awesome.css" rel="stylesheet" />
+     <!-- Morris Chart Styles-->
+   
+        <!-- Custom Styles-->
+    <link href="/static/admin/assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+     <!-- TABLE STYLES-->
+    <link href="/static/admin/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    {% extends "header_admin.html" %}
+    {% block content %}
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+			 <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            Approved User Details <small></small>
+                        </h1>
+                    </div>
+                </div> 
+                 <!-- /. ROW  -->
+               
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             <!-- Advanced Tables -->
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>First Name</th>
+                                            <th>Last name</th>
+                                            <th>Gender(s)</th>
+                                            <th>Institution</th>
+                                            <th>Course</th>
+                                            <th>Qualification</th>
+                                            <th>passsout</th>
+                                            <th>Mark(%)</th>
+                                            <th>Email</th>
+                                            <th>Phone Number</th>
+                                            <th>Place</th>
+                                            <th>Experiance</th>
+                                            <th>Intrested Area</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for i in msg %}
+                                        <!-- {{i}} -->
+                                        <tr class="odd gradeX">
+                                            <td>{{i.id}}</td>
+                                            <td>{{i.fname}}</td>
+                                            <td>{{i.lname}}</td>
+                                            <td>{{i.gnder}}</td>
+                                            <td>{{i.clge}}</td>
+                                            <td>{{i.corse}}</td>
+                                            <td>{{i.qulifcn}}</td>
+                                            <td>{{i.pasout}}</td>
+                                            <td>{{i.mark}}</td>
+
+                                            <td>{{i.emai}}</td>
+                                            <td>{{i.phno}}</td>
+                                            <td>{{i.place}}</td>
+                                            <td>{{i.expnce}}</td>
+                                            <td>{{i.intrested_area}}</td>
+<!--                                             <td>{{i.fname}}</td>
+                                            <td>{{i.fname}}</td>
+ -->
+                                            
+                                        </tr>
+                                        {% endfor %}
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+<a href="http://127.0.0.1:8000/bck_home_admin">Back Home</a>
+
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+            
+        </div>
+               <<!-- footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez</a></p></footer>
+ -->   
+  </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="/static/admin/assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="/static/admin/assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="/static/admin/assets/js/jquery.metisMenu.js"></script>
+     <!-- DATA TABLE SCRIPTS -->
+    <script src="/static/admin/assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="/static/admin/assets/js/dataTables/dataTables.bootstrap.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+         <!-- Custom Js -->
+    <script src="/static/admin/assets/js/custom-scripts.js"></script>
+    
+                       {% endblock %}
+
+</body>
+</html>

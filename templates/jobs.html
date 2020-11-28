@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Jobs</title>
+	<!-- Bootstrap Styles-->
+    <link href="static/admin/assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="static/admin/assets/css/font-awesome.css" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="static/admin/assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+  {% extends "header_admin.html" %}
+    {% block content %} 
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+			 <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            Adding Jobs <small></small>
+                        </h1>
+                    </div>
+                </div> 
+                 <!-- /. ROW  -->
+              <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <!-- Basic Form Elements -->
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form" method="POST" action="jobs">{% csrf_token %}
+                                        <div class="form-group">
+                                            <label>Designation</label>
+                                            <input class="form-control" name="designatn" placeholder="Designation" required="">
+                                            <p class="help-block"></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Company</label>
+                                            <input class="form-control" placeholder="Company" name="cmpny" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Salary</label>
+                                            <input class="form-control" placeholder="Salary" name="slry" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Qualification</label> 
+                                            <input class="form-control" placeholder="Qualification" name="qulficn" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Place</label>
+                                            <input class="form-control" placeholder="Place"  name="plce" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>District</label>
+                                            <input class="form-control" placeholder="District" name="distrct" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Last Date</label>
+                                            <input class="form-control" placeholder="Date" name="dte" required="">
+                                        </div>
+                                        
+                                        <input type="submit" name="btn" class="btn btn-primary" value="submit">
+                                        <!-- <button type="reset" class="btn btn-success">Reset Button</button> -->
+                                    </form>
+                                
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+			<!-- <footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez</a></p></footer> -->
+			</div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="static/admin/assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="static/admin/assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="static/admin/assets/js/jquery.metisMenu.js"></script>
+      <!-- Custom Js -->
+    <script src="static/admin/assets/js/custom-scripts.js"></script>
+    
+                     {% endblock %}
+  
+</body>
+</html>

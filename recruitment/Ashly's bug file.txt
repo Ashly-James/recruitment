@@ -1,0 +1,20 @@
+1. forgot password back button shuould add cant exit only submit button
+2. In registeration exception is not handiled (while entering marks it shows error : Field 'mark' expected a number but got '90%')
+3. Successfully registered message is not showing 
+/approval
+    1. Applications for Admin Approval (rejection is tobe changed to reject, Phone number is not correct,when I reject or approve a person who is registered the count of registerd user,jobs available, job Applications and waiting for approvel is blank?,when refreshing the page error is shown that no any retrurn statement is given,Institution is wrong in list,no need of showing id in list just show serial number,)
+/Expaired_jobs
+    1. Designation is not showing
+/job_form
+    1. while adding job shows error ['“20-01-2021” value has an invalid date format. It must be in YYYY-MM-DD     format.']
+    2. Not showing any success message
+/admin_job_alot
+    1. ivide job allotmet ill problem undee
+    2. user innu applied jobs kannan option illa
+    3. date inthe avide place holder vechathu nallatannu but date time picker vekkamayirunnu date innu elladathum error undee please put proper try catch 
+/jobs_apply_user
+    1. job kanikkunathil problem unde expired job kanikkunnu 
+    2. we can enter the date below the current date so the job expired as it enterded time itself and that job is shown in the list for job applay
+
+/admin_job_alotmnt_submit
+    1. nothing is shown in this page (page comes when we try to allocate job in admin pannel)

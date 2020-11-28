@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>User Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/ronaldo/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/animate.css">
+    
+    <link rel="stylesheet" href="/static/ronaldo/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/static/ronaldo/css/aos.css">
+
+    <link rel="stylesheet" href="/static/ronaldo/css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="/static/ronaldo/css/flaticon.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/icomoon.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/style.css">
+
+
+    <style>
+        table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  /*text-align: center;*/
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+}    </style>
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    
+    
+    
+<!-- </section> -->
+    
+
+
+
+    
+
+
+
+     {% extends "header.html" %}
+    {% block content %}
+          <div class="col-md-12">
+<h2 align="center"><b>Interview Schedulings</b></h2><br>
+        <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+
+              <th>&nbsp&nbsp&nbspName</th>
+              <th>Email</th>
+              <th>Designation</th>
+              <th>Company</th>
+              <th>Address</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in msg %}
+            <tr>
+              <td>{{i.id}}</td>
+
+              <td>&nbsp&nbsp&nbsp{{i.fname}}</td>
+              <td>{{i.email}}</td>
+              <td>{{i.desination}}</td>
+              <td>{{i.company}}</td>
+              <td>{{i.adres}}</td>
+              <td>{{i.date}}</td>
+              <form action="confirm_intrview" method="POST" class="bg-light p-4 p-md-5 contact-form">
+                {% csrf_token %}
+                <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                  <input type="submit" value="Confirm" class="btn btn-success" name="confirm">
+                    <input type="submit" value="Decline" class="btn btn-danger" name="declne">
+
+                </td>
+
+                <!-- <td>
+                  <input type="submit" value="Decline" class="btn btn-danger" name="declne">
+                </td> -->
+                <input type="hidden" name="fnme" value="{{i.fname}}">
+                <input type="hidden" name="desn" value="{{i.desination}}">
+                <input type="hidden" name="cpny" value="{{i.company}}">
+                <!-- <input type="hidden" name="fnme" value="{{i.fname}}"> -->
+
+              </form>
+            </tr>
+            {%  endfor %}
+          </tbody>
+        </table>
+      </div>
+    <!-- <section class="ftco-section contact-section ftco-no-pb" id="contact-section"> -->
+      <!-- <div class="container"> -->
+       <!--  <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Contact</h1>
+            <h2 class="mb-4">Contact Me</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+          </div>
+        </div> -->
+
+        <div class="row no-gutters block-9">
+          <div class="col-md-6 order-md-last d-flex">
+            <form action="confirm_intrview" method="POST" class="bg-light p-4 p-md-5 contact-form">
+              {% csrf_token %}
+              <div class="form-group">
+                <label class="form-control"><h6>{{i.fname}}</h6></label>
+              </div>
+              <div class="form-group">
+<!--                 <input type="text" class="form-control" placeholder="Your Email">
+ -->             
+                 <label class="form-control"><h6>{{i.email}}</h6></label>
+
+               </div>
+              <div class="form-group">
+<!--                 <input type="text" class="form-control" placeholder="Subject">
+ -->             
+                <label class="form-control"><h4>{{i.desination}}</h4></label>
+
+             </div>
+                <label class="form-control"><h4>{{i.company}}</h4></label>
+
+              <!-- <div class="form-group">
+                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+              </div> -->
+              <label class="form-control"><h4>{{i.adres}}</h4></label>
+              <label class="form-control"><h4>{{i.date}}</h4></label>
+
+              <div class="form-group">
+                <input type="submit" value="Confirm" class="btn btn-primary py-3 px-5" name="confirm">
+                <input type="submit" value="Decline" class="btn btn-primary py-3 px-5" name="declne">
+
+              </div>
+           
+            </form>
+
+          </div>
+
+          <!-- <div class="col-md-6 d-flex">
+            <div class="img" style="background-image: url(/static/ronaldo/images/about.jpg);"></div>
+          </div> -->
+        </div>
+      </div>
+
+    <!-- </section> -->
+    
+
+    <!-- <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">About</h2>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Services</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Design</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Development</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Business Strategy</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Data Analysis</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Graphic Design</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+ -->
+            <!-- <p>Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+ <!--  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+         <!--  </div>
+        </div>
+      </div>
+    </footer>
+     -->
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="/static/ronaldo/js/jquery.min.js"></script>
+  <script src="/static/ronaldo/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/static/ronaldo/js/popper.min.js"></script>
+  <script src="/static/ronaldo/js/bootstrap.min.js"></script>
+  <script src="/static/ronaldo/js/jquery.easing.1.3.js"></script>
+  <script src="/static/ronaldo/js/jquery.waypoints.min.js"></script>
+  <script src="/static/ronaldo/js/jquery.stellar.min.js"></script>
+  <script src="/static/ronaldo/js/owl.carousel.min.js"></script>
+  <script src="/static/ronaldo/js/jquery.magnific-popup.min.js"></script>
+  <script src="/static/ronaldo/js/aos.js"></script>
+  <script src="/static/ronaldo/js/jquery.animateNumber.min.js"></script>
+  <script src="/static/ronaldo/js/scrollax.min.js"></script>
+  
+  <script src="/static/ronaldo/js/main.js"></script>
+  {% endblock %}
+    
+  </body>
+</html>

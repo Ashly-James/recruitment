@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	{% extends "header.html" %}
+  	{% block content %}
+    <title>jobs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/ronaldo/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/animate.css">
+    
+    <link rel="stylesheet" href="/static/ronaldo/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/static/ronaldo/css/aos.css">
+
+    <link rel="stylesheet" href="/static/ronaldo/css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="/static/ronaldo/css/flaticon.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/icomoon.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/style.css">
+
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    	<div class="container">
+			<div id="page-1" class= "page one">
+			  	<h2 class="heading">Jobs</h2>
+	    		<div class="row">
+		    		{% for i in msge %}
+	    			<div class="col-md-4">
+	    				<div class="resume-wrap d-flex ftco-animate">
+					    	<div class="text pl-3">
+		    					<span class="date">{{i.dte}}</span>
+		    					<h2>{{i.designatn}}</h2>
+		    					<span class="position">{{i.cmpny}}</span>
+		    					<h4>{{i.qualification}}</h4>
+		    					<h4>{{i.salary}}</h4>
+
+		    					<p>{{i.place}} {{i.district}}</p>
+								<form method="POST" action="aply_job">{% csrf_token %}
+									<input type="hidden" name="word1" value="{{msg.emai}}">
+									<input type="hidden" name="id" value="{{i.id}}">
+									<!-- {{i.id}} -->
+			    					<input type="submit" name="{{i.id}}" value="Apply" class="btn btn-success" >
+			    				</form>
+		    				</div>
+	    				</div>
+		    		</div>
+		    		{% endfor %}
+		    	</div>
+		    </div>
+		</div>
+
+	    				
+
+  <script src="/static/ronaldo/js/jquery.min.js"></script>
+  <script src="/static/ronaldo/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/static/ronaldo/js/popper.min.js"></script>
+  <script src="/static/ronaldo/js/bootstrap.min.js"></script>
+  <script src="/static/ronaldo/js/jquery.easing.1.3.js"></script>
+  <script src="/static/ronaldo/js/jquery.waypoints.min.js"></script>
+  <script src="/static/ronaldo/js/jquery.stellar.min.js"></script>
+  <script src="/static/ronaldo/js/owl.carousel.min.js"></script>
+  <script src="/static/ronaldo/js/jquery.magnific-popup.min.js"></script>
+  <script src="/static/ronaldo/js/aos.js"></script>
+  <script src="/static/ronaldo/js/jquery.animateNumber.min.js"></script>
+  <script src="/static/ronaldo/js/scrollax.min.js"></script>
+  
+  <script src="/static/ronaldo/js/main.js"></script>
+  {% endblock %}
+    
+  </body>
+</html>

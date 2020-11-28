@@ -1,0 +1,102 @@
+ <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview details</title>
+    <!-- Bootstrap Styles-->
+    <link href="/static/admin/assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="/static/admin/assets/css/font-awesome.css" rel="stylesheet" />
+     <!-- Morris Chart Styles-->
+   
+        <!-- Custom Styles-->
+    <link href="/static/admin/assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+     <!-- TABLE STYLES-->
+    <link href="/static/admin/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+                        <div class="panel-heading">
+                            <h1 align="center">{{msg2}}</h1></br></br>
+                        </div>
+                        
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>designation</th>
+                                            <th>Company</th>
+
+                                            <th>Address</th>
+                                            <!-- <th>Admin Status</th> -->
+                                            <th>Date</th>
+                                            <th>Status</th>
+                                            <!-- <th>company</th> -->
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>{% for i in msg %}
+                                        <tr class="success">
+                                            <td>{{i.id}}</td>
+                                            <td>{{i.fname}}</td>
+                                            <td>{{i.email}}</td>
+                                            <td>{{i.desination}}</td>
+                                            <td>{{i.company}}</td>
+                                            <td>{{i.adres}}</td>
+                                            <!-- <td>{{i.status}}</td> -->
+                                            <td>{{i.date}}</td>
+                                            <td>{{i.overall_status}}</td>
+                                            <td>
+                                            
+                                        </td>
+                                        </tr>
+                                        {% endfor %}
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  end  Context Classes  -->
+                </div>
+            </div>
+                     <!-- <a href="http://127.0.0.1:8000/bck_home_admin">Go back Home </a> -->
+    <!-- /. ROW  -->
+                <a href="http://127.0.0.1:8000/bck_home_admin">Back Home</a>
+
+        </div>
+               
+    </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+
+         <!-- /. PAGE WRAPPER  -->
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="/static/admin/assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="/static/admin/assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="/static/admin/assets/js/jquery.metisMenu.js"></script>
+     <!-- DATA TABLE SCRIPTS -->
+    <script src="/static/admin/assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="/static/admin/assets/js/dataTables/dataTables.bootstrap.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+         <!-- Custom Js -->
+    <script src="/static/admin/assets/js/custom-scripts.js"></script>
+    
+   
+</body>
+</html>

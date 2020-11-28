@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	{% extends "header.html" %} 
+  	{% block content %}
+    <title>User Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/ronaldo/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/animate.css">
+    
+    <link rel="stylesheet" href="/static/ronaldo/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/static/ronaldo/css/aos.css">
+
+    <link rel="stylesheet" href="/static/ronaldo/css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="/static/ronaldo/css/flaticon.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/icomoon.css">
+    <link rel="stylesheet" href="/static/ronaldo/css/style.css">
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
+	  
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar"> -->
+	    <!-- <div class="container">
+	      <a class="navbar-brand" href="index.html"><span>R</span>onaldo</a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Jobs</span></a></li>
+	          <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
+	          <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
+	          <li class="nav-item"><a href="#blog-section" class="nav-link"><span>My Blog</span></a></li>
+ -->	      <!-- <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	          <li class="nav-item"><a href="http://127.0.0.1:8000/logut" class="nav-link"><span>Logout</span></a></li>
+
+	        </ul>
+	      </div>
+	    </div> --> 
+	  <!-- </nav><br><br><br> -->
+	  <!-- <section class="hero-wrap js-fullheight"> -->
+      <!-- <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
+          <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
+          	<div class="text text-center">
+          		<span class="subheading">Hey! I am</span>
+		  				<h1>Ronaldo Fredrickson</h1>
+			  				<h2>I'm a 
+								  <span
+								     class="txt-rotate"
+								     data-period="2000"
+								     data-rotate='[ "Web Designer.", "Developer.", "Photographer.", "Marketer.", "Blogger" ]'></span>
+								</h2>
+							</div>
+            </div>
+          </div>
+        </div> -->
+     <!--  </div>
+      <div class="mouse">
+				<a href="#" class="mouse-icon">
+					<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
+				</a>
+			</div>
+    </section> -->
+	
+<!-- </section> -->
+    <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+    	<div class="container">
+    		<div class="row d-flex no-gutters">
+    			<div class="col-md-6 col-lg-6 d-flex">
+    				<div class="img-about img d-flex align-items-stretch">
+    					<div class="overlay"></div>
+	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(/static/ronaldo/images/about.jpg);">
+	    				</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-6 pl-md-5 py-5">
+    				<div class="row justify-content-start pb-3">
+		          <div class="col-md-12 heading-section ftco-animate">
+		          	<h1 class="big">About</h1>
+		            <h2 class="mb-4">About Me</h2>
+<!-- 		            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+ -->		        {% for i in msg %}
+		            <ul class="about-info mt-4 px-md-0 px-2">
+		            	<li class="d-flex"><span>Name:</span> <span>{{i.fname}} {{i.lname}}</span></li>
+		            	<li class="d-flex"><span>Gender:</span> <span>{{i.gnder}}</span></li>
+
+		            	<li class="d-flex"><span>Place:</span> <span>{{i.place}}</span></li>
+		            	<li class="d-flex"><span>Course:</span> <span>{{i.corse}}</span></li>
+		            	<li class="d-flex"><span>Qualification:</span> <span>{{msg.qlifcn}}</span></li>
+		            	<li class="d-flex"><span>Passout:</span> <span>{{i.pasout}}</span></li>
+		            	<li class="d-flex"><span>Mark(%):</span> <span>{{i.mark}}</span></li>
+
+		            	<li class="d-flex"><span>Institution:</span> <span>{{i.clge}}</span></li>
+   		            	<li class="d-flex"><span>Intrested Area:</span> <span>{{i.intrested_area}}</span></li>
+   		            	<input type="hidden" name="uid" value="{{i.emai}}">
+		            	<li class="d-flex"><span>Email:</span> <span>{{i.emai}}</span></li>
+		            	<li class="d-flex"><span>Phone: </span> <span>{{i.phno}}</span></li>
+		            	
+		            	
+		            </ul>
+		          </div>
+		        </div>
+		        {% endfor %}
+	          <!-- <div class="counter-wrap ftco-animate d-flex mt-md-3">
+              <div class="text">
+              	<p class="mb-4">
+	                <span class="number" data-number="120">0</span>
+	                <span>Project complete</span>
+                </p>
+                <p><a href="#" class="btn btn-primary py-3 px-3">Download CV</a></p> -->
+              <!-- </div> -->
+	          </div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+
+    
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+    </footer>
+          </div>
+
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="/static/ronaldo/js/jquery.min.js"></script>
+  <script src="/static/ronaldo/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/static/ronaldo/js/popper.min.js"></script>
+  <script src="/static/ronaldo/js/bootstrap.min.js"></script>
+  <script src="/static/ronaldo/js/jquery.easing.1.3.js"></script>
+  <script src="/static/ronaldo/js/jquery.waypoints.min.js"></script>
+  <script src="/static/ronaldo/js/jquery.stellar.min.js"></script>
+  <script src="/static/ronaldo/js/owl.carousel.min.js"></script>
+  <script src="/static/ronaldo/js/jquery.magnific-popup.min.js"></script>
+  <script src="/static/ronaldo/js/aos.js"></script>
+  <script src="/static/ronaldo/js/jquery.animateNumber.min.js"></script>
+  <script src="/static/ronaldo/js/scrollax.min.js"></script>
+  
+  <script src="/static/ronaldo/js/main.js"></script>
+  {% endblock %}
+    
+  </body>
+</html>
