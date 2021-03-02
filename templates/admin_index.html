@@ -276,10 +276,12 @@
                                 <a href="http://127.0.0.1:8000/usr_complte_intrws">Completed interviews</a>
                             </li>
                             <li>
-                                <a href="http://127.0.0.1:8000/usr_abort_intrws">Expaired Interviews</a>
+                                <a href="http://127.0.0.1:8000/usr_decline_inrws">Declined interviews<span class="fa arrow"></span></a>
+
                             </li>
                             <li>
-                                <a href="http://127.0.0.1:8000/usr_decline_inrws">Declined interviews<span class="fa arrow"></span></a>
+                                <a href="http://127.0.0.1:8000/usr_abort_intrws">Expaired Interviews</a>
+                                
                                 <a href="http://127.0.0.1:8000/usr_rjct_inrws">Rejected interviews<span class="fa arrow"></span></a>
                                 <!-- <ul class="nav nav-third-level">
                                     <li>
@@ -440,8 +442,8 @@
         {% csrf_token %}
         <!-- <input type="submit" name="{{ i.id}}" value="approval" id="{{i.id}}">sorry comment -->
         <div>
-        <button class="btn btn-success" name="id" value="{{i.id}}">Approval</button><br>
-       <td> <button class="btn btn-danger" name="id1" value="{{i.id}}">Rejection</button></td>
+        <button class="btn btn-success" name="id" value="{{i.id}}">Approve</button><br>
+       <td> <button class="btn btn-danger" name="id1" value="{{i.id}}">Reject</button></td>
     </div>
     <!-- <div class="form-group">
                 <input type="submit" value="Approval" class="btn btn-success py-3 px-5" name="Aprove">

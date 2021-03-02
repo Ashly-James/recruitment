@@ -272,10 +272,12 @@
                                 <a href="http://127.0.0.1:8000/usr_complte_intrws">Completed interviews</a>
                             </li>
                             <li>
-                                <a href="http://127.0.0.1:8000/usr_abort_intrws">Expaired Interviews</a>
+                             <a href="http://127.0.0.1:8000/usr_decline_inrws">Declined interviews<span class="fa arrow"></span></a>
+
                             </li>
                             <li>
-                                <a href="http://127.0.0.1:8000/usr_decline_inrws">Declined interviews<span class="fa arrow"></span></a>
+                                <a href="http://127.0.0.1:8000/usr_abort_intrws">Expaired Interviews</a>
+
                                 <a href="http://127.0.0.1:8000/usr_rjct_inrws">Rejected interviews<span class="fa arrow"></span></a>
                                 <!-- <ul class="nav nav-third-level">
                                     <li>
@@ -292,7 +294,7 @@
                          </li>
                 </ul>
             </li>
-                    <a href="http://127.0.0.1:8000/Expaired_jobs"><i class="fa fa-fw fa-file"></i> Expaired Jobs</a>
+                    <!-- <a href="http://127.0.0.1:8000/Expaired_jobs"><i class="fa fa-fw fa-file"></i> Expaired Jobs</a> -->
 
         </ul>
 
@@ -328,15 +330,16 @@
                                             <label>Email</label> 
                                             <input class="form-control" name="email" value="{{i.mail}}">
                                         </div>
+                                         <div class="form-group">
+                                            <label>Company</label>
+                                            <input class="form-control" value="{{i.company}}" name="cmpny">
+                                        </div>
                                         <div class="form-group">
                                             <label>Designation</label>
                                             <input class="form-control" name="designatn" value="{{i.desination}}">
                                             <!-- <p class="help-block"></p> -->
                                         </div>
-                                        <div class="form-group">
-                                            <label>Company</label>
-                                            <input class="form-control" value="{{i.company}}" name="cmpny">
-                                        </div>
+                                       
                                         <!-- <div class="form-group">
                                             <label>Salary</label>
                                             <input class="form-control" placeholder="Salary" name="slry">

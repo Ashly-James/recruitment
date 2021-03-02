@@ -11,7 +11,7 @@ dict2={}
 c=0
 # Create your views here.
 def load(request):
-	abt(request)
+	# abt(request)
 	return render(request,"index.html")
 def abt(request):
 	pass
@@ -52,7 +52,7 @@ def registration(request):
 			q3="Sorry Email is Alredy Existed"
 			return render(request,"regstrn_form.html",{"msg":q3})
 		else:
-			import pdb; pdb.set_trace()
+			# import pdb; pdb.set_trace(
 			data1=Approved_users(fname=fnme,lname=lnme,gnder=gnder,place=plce,emai=mail,phno=phno,
 			expnce=exp,corse=course,qulifcn=qulifcn,pasout=passout,clge=insttn,mark=mrk,
 			intrested_area=intstd_area)
@@ -72,9 +72,9 @@ def user_home(request):
 	q1=Approved_users.objects.filter(emai=username)
 	return render(request,"prfle.html",{"msg":q1})
 
-def user_home_page(request):
-		pass
-		return render(request,"index.html")
+# def user_home_page(request):
+# 		pass
+# 		return render(request,"index.html")
 	
 def loginrf(request):
 	# u=""
@@ -396,7 +396,7 @@ def forgot(request):
 		password=User.objects.make_random_password()
 		print(password)
 		n=request.POST['pswdreset']
-		import pdb; pdb.set_trace()
+		# import pdb; pdb.set_trace()
 		try:
 			user=User.objects.get(username=n)
 			print(user)
@@ -481,6 +481,8 @@ def dlte_admn_jobs(request):
 
 	except Exception as e:
 		print(e)
+		return render(request,"exception.html")
+
 def Expaired_jobs(request):
 	pass
 	try:
@@ -503,3 +505,21 @@ def pdf_view(request):
 		response=HttpResponse(pdf.read(),content_type='application/pdf')
 		response['Content-Disposition']='pid.pdf'
 		return response
+def change_pswd(request):
+	return render(request,"change_pswd.html")
+def change_passwrd(request):
+	try:
+		usernme=request.session['logmail']
+		paswd=request.POST['pswdreset']
+		user=User.objects.get(username=usernme)
+		print(paswd)	
+		if user:
+			print(user)
+		user.set_password(paswd)
+		user.save()
+		print("user",user)
+		q=Approved_users.objects.filter(emai=usernme)
+		return render(request,"prfle.html",{'msg':q})
+	except Exception as e:
+		return render(request,"exception.html")
+

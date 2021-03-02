@@ -1,3 +1,26 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h3>Forgot Password</h3>
+<form method="POST" action="forgot">
+	<input type="text" name="pswdreset">
+	{% csrf_token %}
+	{{ form.as_p}}
+	<button type="submit">submit</button>
+</form>
+<div>
+	{% for m in messages %}
+	<h2>{{m}}</h2>
+	{% endfor %}
+</div>
+</body>
+</html> -->
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +28,10 @@
   <link rel="stylesheet" type="text/css" href="static/css/style1.css">
   <style type="text/css">
     
+/* BASIC */
+
+
+
   </style>
   <link rel="stylesheet" type="text/css" href="style.css">
    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -24,20 +51,20 @@
       <!-- <h2>Login</h2> -->
     </lg>
 <br><br>
-	<h5>Forgot Password</h5><br><br>
+	<h5>Reset Password</h5><br><br>
 
-	<form method="POST" action="forgot">
-		<input type="text" name="pswdreset" id="login" class="fadeIn second" placeholder="E-Mail"><br><br>
+	<form method="POST" action="change_passwrd">
+		<input type="text" name="pswdreset" id="login" class="fadeIn second" placeholder="New Password"><br><br>
 		{% csrf_token %}
 		{{ form.as_p}}
 		<button type="submit" class="btn btn-primary" name="btnSub">submit</button><br><br><br>
 	</form>
 	<div>
-		{% for m in messages %}
+		<!-- {% for m in messages %}
 		 <div style="color: red"><h6>{{m}}</h6></div>
 
-		{% endfor %}
-  <div align="center"><a href="http://127.0.0.1:8000/">Back Home</a></div>
+		{% endfor %} -->
+  <div align="center"><a href="http://127.0.0.1:8000/user_homeurl">Back Home</a></div>
 
 	</div>
 
